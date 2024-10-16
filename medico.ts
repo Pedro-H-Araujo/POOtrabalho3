@@ -44,12 +44,16 @@ export class Medico{
 	}
 
     private registrarConsulta(paciente:Paciente, dataConsulta:Date){//alterar na UML e concluir implementacao do método
+			const consulta = new Consulta(paciente, this, dataConsulta);
+			console.log(`Consulta registrada para o paciente ${paciente.nome} com o Dr(a). ${this.nome} em ${dataConsulta}.`);
+			return consulta;
+		}
 
+    
 
+    private emitirReceita(consulta: Consulta, textoReceita: string):receita {
+        const receita = new receita(consulta, textoReceita);
+        console.log(`Receita emitida para o paciente ${consulta.paciente.nome}: ${textoReceita}`);
+        return receita;
     }
-
-    private emitirReceita(consulta:Consulta, textoReceita:string){//concluir implementacao do método
-
-    }
-
 }

@@ -1,19 +1,12 @@
-import { Medico } from './Medico';
-import { Paciente } from './Paciente';
+import { Medico } from './medico';
+import { Paciente } from './paciente';
 
 
-function criarMedico(): void {
-    const medico = new Medico("Dr. João", 123456, "Cardiologia");
-    console.log(medico.getNome());
-}
+const medico = new Medico("Dr. João", 12345, "Cardiologia");
+const paciente = new paciente("Maria", 45);
+const dataConsulta = new Date();
 
-criarMedico();
+const consulta = medico.registrarConsulta(paciente, dataConsulta);
+const receita = medico.emitirReceita(consulta, "Tomar 1 comprimido de AAS por dia.");
 
-function criarPaciente(): void {
-    const paciente = new Paciente("Maria", 12345678901, "Unimed");
-    console.log(`Nome: ${paciente.getNome()}`);
-    console.log(`CPF: ${paciente.getCpf()}`);
-    console.log(`Convênio: ${paciente.getConvenio()}`);
-}
-
-criarPaciente();
+receita.imprimirReceita();
