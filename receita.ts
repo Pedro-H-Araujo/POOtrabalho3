@@ -1,43 +1,41 @@
-import { Consulta } from "./consulta";
+import { Consulta } from './consulta';
 
-export class Receita{
+export class Receita {
+    private _dataEmissao: Date;
+    private _textoReceita: string;
+    private _consultaRef: Consulta;
 
-private _dataEmissao:Date;
-private _textoReceita:string;
-private _consultaRef:Consulta;
+    constructor(dataEmissao: Date, textoReceita: string, consultaRef: Consulta) {
+        this._dataEmissao = dataEmissao;
+        this._textoReceita = textoReceita;
+        this._consultaRef = consultaRef;
+    }
 
+    get dataEmissao(): Date {
+        return this._dataEmissao;
+    }
 
-	constructor(dataEmissao: Date, textoReceita: string, consultaRef: Consulta) {
-		this._dataEmissao = dataEmissao;
-		this._textoReceita = textoReceita;
-		this._consultaRef = consultaRef;
-	}
+    set dataEmissao(dataEmissao: Date) {
+        this._dataEmissao = dataEmissao;
+    }
 
+    get textoReceita(): string {
+        return this._textoReceita;
+    }
 
-   
-	 get dataEmissao(): Date {
-		return this._dataEmissao;
-	}
+    set textoReceita(textoReceita: string) {
+        this._textoReceita = textoReceita;
+    }
 
-   	 set dataEmissao(dataEmissao: Date) {
-		this._dataEmissao = dataEmissao;
-	}
+    get consultaRef(): Consulta {
+        return this._consultaRef;
+    }
 
-   	 get textoReceita(): string {
-		return this._textoReceita;
-	}
+    set consultaRef(consultaRef: Consulta) {
+        this._consultaRef = consultaRef;
+    }
 
-   	 set textoReceita(textoReceita: string) {
-		this._textoReceita = textoReceita;
-	}
-
-   	 get consultaRef(): Consulta {
-		return this._consultaRef;
-	}
-
-   	 set consultaRef(consultaRef: Consulta) {
-		this._consultaRef = consultaRef;
-	}
-
-
+    imprimirReceita() {
+        console.log(`Receita médica: ${this._textoReceita}`);
+    }
 }
