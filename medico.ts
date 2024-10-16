@@ -1,43 +1,55 @@
-export class Medico {
-    private nome: string;
-    private crm: number;
-    private especialidade: string;
+import { Consulta } from "./consulta";
+import { Paciente } from "./paciente";
+export class Medico{
+    private _nome:string;
+    private _crm:number;
+    private _especialidade:string;
 
-    constructor(nome: string, crm: number, especialidade: string) {
-        this.nome = nome;
-        this.crm = crm;
-        this.especialidade = especialidade;
+
+
+	constructor(nome: string, crm: number, especialidade: string) {
+		this._nome = nome;
+		this._crm = crm;
+		this._especialidade = especialidade;
+	}
+
+
+     get nome(): string {
+		return this._nome;
+	}
+
+   
+	 set nome(nome: string) {
+		this._nome = nome;
+	}
+
+    
+	 get crm(): number {
+		return this._crm;
+	}
+
+    
+	 set crm(crm: number) {
+		this._crm = crm;
+	}
+
+    
+	 get especialidade(): string {
+		return this._especialidade;
+	}
+
+    
+	 set especialidade(especialidade: string) {
+		this._especialidade = especialidade;
+	}
+
+    private registrarConsulta(paciente:Paciente, dataConsulta:Date){//alterar na UML e concluir implementacao do método
+
+
     }
 
-    public getNome(): string {
-        return this.nome;
+    private emitirReceita(consulta:Consulta, textoReceita:string){//concluir implementacao do método
+
     }
 
-    public setNome(nome: string): void {
-        this.nome = nome;
-    }
-
-    public getCrm(): number {
-        return this.crm;
-    }
-
-    public setCrm(crm: number): void {
-        this.crm = crm;
-    }
-
-    public getEspecialidade(): string {
-        return this.especialidade;
-    }
-
-    public setEspecialidade(especialidade: string): void {
-        this.especialidade = especialidade;
-    }
-
-    public registrarConsulta(paciente: Paciente, dataConsulta: Date): void {
-        // Implementar lógica para registrar a consulta
-    }
-
-    public emitirReceita(consulta: Consulta, textoReceita: string): void {
-        // Implementar lógica para emitir a receita
-    }
 }

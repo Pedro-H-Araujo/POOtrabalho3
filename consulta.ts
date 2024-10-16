@@ -1,51 +1,69 @@
-class Consulta {
-    private id: number;
-    private dataConsulta: Date;
-    private horaConsulta: number;
-    private medico: Medico;
-    private paciente: Paciente;
+import { Paciente } from "./paciente";
+import { Medico } from "./medico";
+export class Consulta{
+private _id:number;
+private _dataConsulta:Date;
+private _horaConsulta:number;
+private _medico:Medico;
+private _paciente:Paciente;
 
-    constructor(id: number, dataConsulta: Date, horaConsulta: number, medico: Medico, paciente: Paciente) {
-        this.id = id;
-        this.dataConsulta = dataConsulta;
-        this.horaConsulta = horaConsulta;
-        this.medico = medico;
-        this.paciente = paciente;
-    }
+constructor(id:number, dataConsulta:Date, horaConsulta:number, medico:Medico, paciente:Paciente){
 
-    public getId(): number {
-        return this.id;
-    }
+this._id=id;
+this._dataConsulta=dataConsulta;
+this._horaConsulta=horaConsulta;
+this._medico=medico;
+this._paciente;
+}
 
-    public getDataConsulta(): Date {
-        return this.dataConsulta;
-    }
+     get id(): number {
+		return this._id;
+	}
 
-    public setDataConsulta(dataConsulta: Date): void {
-        this.dataConsulta = dataConsulta;
-    }
+     set id(id: number) {//nao poderá ser inserido ou alterado via setter pois garante que uma consulta foi lancada exclusivamente no sistema, portanto deve ser gerado automaticamente ao instanciar um objeto de consulta
+		this._id = id;
+	}
 
-    public getHoraConsulta(): number {
-        return this.horaConsulta;
-    }
+    
+	 get horaConsulta(): number {
+		return this._horaConsulta;
+	}
 
-    public setHoraConsulta(horaConsulta: number): void {
-        this.horaConsulta = horaConsulta;
-    }
+    
+	 set horaConsulta(horaConsulta: number) {
+		this._horaConsulta = horaConsulta;
+	}
 
-    public getMedico(): Medico {
-        return this.medico;
-    }
+    
+	 get dataConsulta(): Date {
+		return this._dataConsulta;
+	}
 
-    public setMedico(medico: Medico): void {
-        this.medico = medico;
-    }
 
-    public getPaciente(): Paciente {
-        return this.paciente;
-    }
+	 set dataConsulta(dataConsulta: Date) {
+		this._dataConsulta = dataConsulta;
+	}
 
-    public setPaciente(paciente: Paciente): void {
-        this.paciente = paciente;
-    }
+   
+	 get medico(): Medico {
+		return this._medico;
+	}
+
+    
+	 set medico(medico: Medico) {
+		this._medico = medico;
+	}
+
+    
+	 get paciente(): Paciente {
+		return this._paciente;
+	}
+
+    
+	 set paciente(paciente: Paciente) {
+		this._paciente = paciente;
+	}
+
+
+
 }

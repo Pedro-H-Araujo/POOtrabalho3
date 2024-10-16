@@ -1,35 +1,43 @@
-class Receita {
-    private dataEmissao: Date;
-    private textoReceita: string;
-    private consultaRef: Consulta;
+import { Consulta } from "./consulta";
 
-    constructor(dataEmissao: Date, textoReceita: string, consultaRef: Consulta) {
-        this.dataEmissao = dataEmissao;
-        this.textoReceita = textoReceita;
-        this.consultaRef = consultaRef;
-    }
+export class Receita{
 
-    public getDataEmissao(): Date {
-        return this.dataEmissao;
-    }
+private _dataEmissao:Date;
+private _textoReceita:string;
+private _consultaRef:Consulta;
 
-    public setDataEmissao(dataEmissao: Date): void {
-        this.dataEmissao = dataEmissao;
-    }
 
-    public getTextoReceita(): string {
-        return this.textoReceita;
-    }
+	constructor(dataEmissao: Date, textoReceita: string, consultaRef: Consulta) {
+		this._dataEmissao = dataEmissao;
+		this._textoReceita = textoReceita;
+		this._consultaRef = consultaRef;
+	}
 
-    public setTextoReceita(textoReceita: string): void {
-        this.textoReceita = textoReceita;
-    }
 
-    public getConsultaRef(): Consulta {
-        return this.consultaRef;
-    }
+   
+	 get dataEmissao(): Date {
+		return this._dataEmissao;
+	}
 
-    public setConsultaRef(consultaRef: Consulta): void {
-        this.consultaRef = consultaRef;
-    }
+   	 set dataEmissao(dataEmissao: Date) {
+		this._dataEmissao = dataEmissao;
+	}
+
+   	 get textoReceita(): string {
+		return this._textoReceita;
+	}
+
+   	 set textoReceita(textoReceita: string) {
+		this._textoReceita = textoReceita;
+	}
+
+   	 get consultaRef(): Consulta {
+		return this._consultaRef;
+	}
+
+   	 set consultaRef(consultaRef: Consulta) {
+		this._consultaRef = consultaRef;
+	}
+
+
 }
